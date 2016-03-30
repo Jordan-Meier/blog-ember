@@ -8,8 +8,9 @@ export default Ember.Route.extend({
     update() {
 
     },
-    destroyPost() {
-
+    deletePost(post) {
+      post.destroyRecord();
+      this.transitionTo('index');
     }
   }
 });
