@@ -10,7 +10,6 @@ export default Ember.Component.extend({
     savePost() {
       var formInputs = {
         title: this.get('title') ? this.get('title'): "",
-        // date: this.get('date') ? this.get('date'): "",
         category: this.get('category') ? this.get('category'): "",
         body: this.get('body') ? this.get('body'): "",
         image: this.get('image') ? this.get('image'): ""
