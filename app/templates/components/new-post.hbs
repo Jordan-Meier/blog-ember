@@ -4,22 +4,22 @@
     <form>
       <div class="form-group">
         <label for="title">Title</label>
-        {{input value=title id="title"}}
+        {{input value=title id="title" class="form-control"}}
       </div>
 
       <div class="form-group">
         <label for="category">Cagtegory</label>
-        {{input value=category id="category"}}
+        {{input value=category id="category" class="form-control"}}
       </div>
 
       <div class="form-group">
         <label for="body">Body</label>
-        {{textarea rows="8" cols="40" value=body id="body"}}
+        {{textarea rows="8" cols="40" value=body id="body" class="form-control"}}
       </div>
 
       <div class="form-group">
         <label for="image">Image URL</label>
-        {{input value=image id="image"}}
+        {{input value=image id="image" class="form-control"}}
       </div>
 
       <button {{action 'savePost'}}>Add New Post</button>
@@ -27,5 +27,5 @@
     </form>
   </div>
 {{else}}
-  <button {{action 'postFormShow'}}>New Post</button>
+  <button class="btn-lg btn-primary" {{action 'postFormShow'}}>New Post</button>
 {{/if}}

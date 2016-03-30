@@ -1,4 +1,18 @@
+body {
+  background-color: lightblue;
+}
+
 img {
   width: 100%;
+  margin-bottom: 10px;
+}
+
+.jumbotron {
+  background-image: url("https://static.pexels.com/photos/397/italian-landscape-mountains-nature.jpg");
+  margin: 0;
+
+}
+
+.btn-danger {
   margin-bottom: 10px;
 }
