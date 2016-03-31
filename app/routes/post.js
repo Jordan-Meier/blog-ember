@@ -41,7 +41,6 @@ export default Ember.Route.extend({
       this.transitionTo('post');
     },
     deleteComment(comment) {
-      debugger;
       var post = comment.get('post');
       comment.destroyRecord().then(function() {
         post.save();
