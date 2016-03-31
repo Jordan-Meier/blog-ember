@@ -7,7 +7,6 @@ export default Ember.Route.extend({
       comments: this.store.findAll('comment')
     });
 
-    // return this.store.findRecord('post', params.post_id);
   },
   actions: {
     updatePost(post, updateInputs) {
@@ -42,11 +41,14 @@ export default Ember.Route.extend({
       this.transitionTo('post');
     },
     deleteComment(comment) {
+      debugger;
       var post = comment.get('post');
       comment.destroyRecord().then(function() {
         post.save();
       });
       this.transitionTo('post');
+      // comment.destroyRecord();
+      // this.transitionTo('post');
     }
   }
 });

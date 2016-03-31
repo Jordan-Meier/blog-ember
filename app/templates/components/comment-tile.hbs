@@ -3,6 +3,6 @@
     <h4>{{comment.author}}</h4>
     <p>{{comment.body}}</p>
     <button {{action 'updateComment'}}>Edit</button>
-    <button {{action 'delete'}}>Delete Comment</button>
+    <button {{action 'deleteComment' comment}}>Delete Comment</button>
   {{/each}}
 </div>
