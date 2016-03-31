@@ -1,7 +1,9 @@
 <h2>{{post.title}}</h2>
 
-{{post-detail post=model deletePost="deletePost"}}
+{{post-detail post=model.posts deletePost="deletePost"}}
 
-{{update-post post=model updatePost="updatePost"}}
+{{update-post post=model.posts updatePost="updatePost"}}
 
-{{comment-tile post=model}}
+{{add-comment comment=model.comments saveComment="saveComment"}}
+
+{{comment-tile comment=model.comments}}

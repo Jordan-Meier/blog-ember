@@ -12,6 +12,7 @@ export default Ember.Component.extend({
         title: this.get('title') ? this.get('title'): "",
         category: this.get('category') ? this.get('category'): "",
         body: this.get('body') ? this.get('body'): "",
+        comments: [],
         image: this.get('image') ? this.get('image'): ""
       };
       this.set('addNewPost', false);

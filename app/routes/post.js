@@ -2,7 +2,12 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model(params) {
-    return this.store.findRecord('post', params.post_id);
+    return Ember.RSVP.hash({
+      posts: this.store.findRecord('post', params.post_id),
+      comments: this.store.findAll('comment')
+    });
+
+    // return this.store.findRecord('post', params.post_id);
   },
   actions: {
     updatePost(post, updateInputs) {
@@ -18,6 +23,12 @@ export default Ember.Route.extend({
     deletePost(post) {
       post.destroyRecord();
       this.transitionTo('index');
+    },
+
+    saveComment(params) {
+      var newComment = this.store.createRecord('comment', params);
+      newComment.save();
+      this.transitionTo('post');
     }
   }
 });
