@@ -4,6 +4,6 @@
 
 {{update-post post=model.posts updatePost="updatePost"}}
 
-{{add-comment comment=model.comments saveComment="saveComment"}}
+{{add-comment comment=model.comments post=model.posts saveComment="saveComment"}}
 
-{{comment-tile comment=model.comments}}
+{{comment-tile  post=model.posts}}
