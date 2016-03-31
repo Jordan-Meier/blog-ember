@@ -20,10 +20,12 @@ export default Ember.Route.extend({
 
     },
     deletePost(post) {
-      post.comments.forEach(function(comment) {
-        comment.destroyRecord();
+      var comment_deletions = post.get('comments').map(function(comment) {
+        return comment.destroyRecord();
       });
-      post.destroyRecord();
+      Ember.RSVP.all(comment_deletions).then(function() {
+        return post.destroyRecord();
+      });
       this.transitionTo('index');
     },
 
